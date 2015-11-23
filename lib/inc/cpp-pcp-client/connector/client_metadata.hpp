@@ -17,6 +17,7 @@ class ClientMetadata {
     std::string client_type;
     std::string common_name;
     std::string uri;
+    long connection_timeout;
 
     /// Throws a connection_config_error in case: the client
     /// certificate file does not exist or is invalid; it fails to
@@ -25,7 +26,8 @@ class ClientMetadata {
     ClientMetadata(const std::string& _client_type,
                    const std::string& _ca,
                    const std::string& _crt,
-                   const std::string& _key);
+                   const std::string& _key,
+                   const long& _connection_timeout);
 };
 
 }  // namespace PCPClient
